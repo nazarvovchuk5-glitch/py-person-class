@@ -15,9 +15,9 @@ def create_person_list(people: list) -> list:
     for person in people:
         human = Person.people.get(person.get("name"))
         if person.get("wife", None):
-            human.wife = Person.people.get(person["wife"])
+            human.wife = Person.people.get(person.get("wife"))
 
         if person.get("husband", None):
-            human.husband = Person.people.get(person["husband"])
+            human.husband = Person.people.get(person.get("husband"))
 
     return list(Person.people.values())
